@@ -1,0 +1,18 @@
+<ng-container *ngIf="country">
+  <h2>{{ country.name }} ({{ country.shortName }})</h2>
+  <div class="hotels" *ngIf="country.hotels.length > 0">
+    <div class="card" *ngFor="let hotel of country!.hotels">
+      <h5 class="card-header">{{ hotel.name }}</h5>
+      <div class="card-body">
+        <span class="font-bold">Location: {{ hotel.address }}</span><br>
+        <span>Rating: {{ hotel.rating }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="hotels" *ngIf="country.hotels.length === 0">
+    <span>No hotels found!</span>
+  </div>
+</ng-container>
+<ng-container *ngIf="!country">
+  <span>Country was not found!</span>
+</ng-container>

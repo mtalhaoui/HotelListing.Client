@@ -1,0 +1,7 @@
+<div class="card" *ngFor="let country of countries$| async">
+  <h4 class="card-header text-center">{{ country.name }}</h4>
+  <div class="card-body text-center">
+    <span class="font-bold">{{ country.shortName }}</span><br><br>
+    <button class="btn btn-link" [routerLink]="[country.id]">View hotels</button>
+  </div>
+</div>
